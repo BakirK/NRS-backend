@@ -68,14 +68,10 @@ app.all("/" /*, authChecks.checkAuthenticated*/, require("./routes/index"));
 
 app.all(
   ["/login", "/login*"],
-  /*authChecks.checkNotAuthenticated,*/
+  authChecks.checkNotAuthenticated,
   require("./routes/login")
 );
-app.all(
-  "/logout",
-  /*authChecks.checkAuthenticated, */
-  require("./routes/login")
-);
+app.all("/logout", authChecks.checkAuthenticated, require("./routes/login"));
 
 app.all(
   ["/register", "/register*"],
@@ -98,14 +94,14 @@ app.all(
 );
 
 app.all(
-  /* ["/manufacturers", "/manufacturers*"],
-  authChecks.checkAuthenticated,*/
+  ["/manufacturers", "/manufacturers*"],
+  /*authChecks.checkAuthenticated,*/
   require("./routes/manufacturers")
 );
 
 app.all(
-  /* ["/categories", "/categories*"],
-  authChecks.checkAuthenticated,*/
+  ["/categories", "/categories*"],
+  /*authChecks.checkAuthenticated,*/
   require("./routes/categories")
 );
 

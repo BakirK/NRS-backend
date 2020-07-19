@@ -3,7 +3,6 @@ GET  https://nrs-backend.herokuapp.com/items
 content-Type: application/json
 
 {
-    "api_key": "AIzaSyCeJLveAW9reXowkdJCjlDoMf4mNpn5pzc"
 }
 
 ###
