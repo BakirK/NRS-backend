@@ -1,5 +1,5 @@
 ###
-GET  http://localhost:8080/warehouses
+GET  https://nrs-backend.herokuapp.com/items
 content-Type: application/json
 
 {
@@ -8,19 +8,19 @@ content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/orders
+DELETE https://nrs-backend.herokuapp.com/orders
 content-Type: application/json
 
 {
     "supplierId": "1"
 }
 ###
-POST http://localhost:8080/warehouses/1/items/1
+POST https://nrs-backend.herokuapp.com/warehouses/31/items/41
 content-Type: application/json
 
 {
     "apy_key": "AIzaSyCeJLveAW9reXowkdJCjlDoMf4mNpn5pzc",
-    "quantity": "54"
+    "quantity": "34"
 }
 ###
 

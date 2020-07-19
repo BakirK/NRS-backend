@@ -1,18 +1,22 @@
 ###
 //get all purchases
 GET http://localhost:8080/purchases
+content-Type: application/json
 
+{
+    "apy_key": "AIzaSyCeJLveAW9reXowkdJCjlDoMf4mNpn5pzc"
+}
 ###
 //get purchase with id
-GET http://localhost:8080/purchases/16/items
+GET https://nrs-backend.herokuapp.com/purchases/16/items
 
 ###
 //delete purchase with id
-DELETE http://localhost:8080/purchases/16
+DELETE https://nrs-backend.herokuapp.com/purchases/16
 ###
 //all parameters in body are required and must exist
 //stanje_id(condition) values are static and aredefiend in db (id 1-7)
-POST http://localhost:8080/purchases
+POST https://nrs-backend.herokuapp.com/purchases
 content-Type: application/json
 
 {
@@ -21,13 +25,14 @@ content-Type: application/json
     "purchaseItems": [
         {
             "quantity": "7",
-            "itemId": "6"
+            "itemId": "156"
         }
-    ]
+    ],
+    "apy_key": "AIzaSyCeJLveAW9reXowkdJCjlDoMf4mNpn5pzc"
 }
 ###
 //quantity is required and item must already be in purchase
-PUT http://localhost:8080/purchases/16/items/6
+PUT https://nrs-backend.herokuapp.com/purchases/16/items/6
 
 content-Type: application/json
 

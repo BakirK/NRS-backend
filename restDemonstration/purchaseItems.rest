@@ -1,20 +1,20 @@
 ###
 //get all items of purchase with id 1
-GET http://localhost:8080/purchases/1/items
+GET https://nrs-backend.herokuapp.com/purchases/1/items
 
 
 ###
 
-DELETE http://localhost:8080/purchases/1/items/7
+DELETE https://nrs-backend.herokuapp.com/purchases/1/items/7
 
 ###
 
-DELETE http://localhost:8080/purchases/1/items
+DELETE https://nrs-backend.herokuapp.com/purchases/1/items
 
 ###
 
 //quantity is mandatory
-PUT http://localhost:8080/purchases/1/items/7
+PUT https://nrs-backend.herokuapp.com/purchases/1/items/7
 content-Type: application/json
 
 {
@@ -23,7 +23,7 @@ content-Type: application/json
 
 ###
 //quantity is mandatory
-POST http://localhost:8080/purchases/1/items/7
+POST https://nrs-backend.herokuapp.com/purchases/1/items/7
 content-Type: application/json
 
 {

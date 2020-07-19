@@ -3,7 +3,7 @@ const queries = require("./queries/purchasesQueries.js");
 
 var authChecks = (function () {
   var checkAuthenticatedImpl = function (req, res, next) {
-    if (req.isAuthenticated() || req.body.apy_key === process.env.API_KEY) {
+    if (req.isAuthenticated() || req.body.api_key === process.env.API_KEY) {
       return next();
     }
     res.redirect("/login");
@@ -22,7 +22,7 @@ var authChecks = (function () {
       if (
         user &&
         user.pravo_pristupa > role &&
-        req.body.apy_key !== process.env.API_KEY
+        req.body.api_key !== process.env.API_KEY
       ) {
         res.status(401);
         return res.send("Only admins can access this!!!");
@@ -35,11 +35,11 @@ var authChecks = (function () {
   function checkPurchaseImpl(req, res, next) {
     if (
       (!req.user || !req.user.id || !req.user.pravo_pristupa) &&
-      !req.body.apy_key
+      !req.body.api_key
     ) {
       res.json({ error: "Not allowed" });
     } else if (
-      req.body.apy_key === process.env.API_KEY ||
+      req.body.api_key === process.env.API_KEY ||
       req.user.pravo_pristupa == 1
     ) {
       next();
