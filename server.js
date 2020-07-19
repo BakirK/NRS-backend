@@ -64,90 +64,94 @@ app.use(methodOverride("_method"));
 app.use(express.json());
 app.use(helmet());
 
-app.all("/", authChecks.checkAuthenticated, require("./routes/index"));
+app.all("/" /*, authChecks.checkAuthenticated*/, require("./routes/index"));
 
 app.all(
   ["/login", "/login*"],
-  authChecks.checkNotAuthenticated,
+  /*authChecks.checkNotAuthenticated,*/
   require("./routes/login")
 );
-app.all("/logout", authChecks.checkAuthenticated, require("./routes/login"));
+app.all(
+  "/logout",
+  /*authChecks.checkAuthenticated, */
+  require("./routes/login")
+);
 
 app.all(
   ["/register", "/register*"],
-  authChecks.checkNotAuthenticated,
+  /*authChecks.checkNotAuthenticated,*/
   require("./routes/register")
 );
 
 app.all(
   ["/users", "/users*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.ADMIN),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.ADMIN),*/
   require("./routes/users")
 );
 
 app.all(
   ["/people", "/people*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.ADMIN),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.ADMIN),*/
   require("./routes/people")
 );
 
 app.all(
-  ["/manufacturers", "/manufacturers*"],
-  authChecks.checkAuthenticated,
+  /* ["/manufacturers", "/manufacturers*"],
+  authChecks.checkAuthenticated,*/
   require("./routes/manufacturers")
 );
 
 app.all(
-  ["/categories", "/categories*"],
-  authChecks.checkAuthenticated,
+  /* ["/categories", "/categories*"],
+  authChecks.checkAuthenticated,*/
   require("./routes/categories")
 );
 
 app.all(
   ["/items", "/items*"],
-  authChecks.checkAuthenticated,
+  /*authChecks.checkAuthenticated,*/
   require("./routes/items")
 );
 
 app.all(
   ["/warehouses", "/warehouses*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.UPOSLENIK),
+  /* authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.UPOSLENIK),*/
   require("./routes/warehouses")
 );
 
 app.all(
   ["/suppliers", "/suppliers*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.UPOSLENIK),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.UPOSLENIK),*/
   require("./routes/suppliers")
 );
 
 app.all(
   ["/orders", "/orders*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.UPOSLENIK),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.UPOSLENIK),*/
   require("./routes/orders")
 );
 
 app.all(
   ["/purchases", "/purchases*"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.KUPAC),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.KUPAC),*/
   require("./routes/purchases")
 );
 app.all(
   ["/shop", "/shop"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.ADMIN),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.ADMIN),*/
   require("./routes/shop")
 );
 app.all(
   ["/cart", "/cart"],
-  authChecks.checkAuthenticated,
-  authChecks.authRole(ROLE.ADMIN),
+  /*authChecks.checkAuthenticated,
+  authChecks.authRole(ROLE.ADMIN),*/
   require("./routes/cart")
 );
 //app.listen(process.env.PORT || 8080);
