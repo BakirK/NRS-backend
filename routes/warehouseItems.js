@@ -31,7 +31,7 @@ router.post(
   (req, res) => {
     let warehouseId = req.params.id;
     let itemId = req.params.itemId;
-    let quantity = req.body.quantity;
+    let quantity = parseInt(req.body.quantity);
     queries.addWarehouseItemsById(warehouseId, itemId, quantity, function (
       error,
       results,
