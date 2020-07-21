@@ -123,6 +123,7 @@ router.post("/people", async (req, res) => {
         person.lokacija,
       ],
       function (error, resultsOuter, fields) {
+        console.log(JSON.stringify(resultsOuter));
         if (error) {
           console.log(error);
           res.writeHead(200);

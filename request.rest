@@ -15,6 +15,20 @@ content-Type: application/json
     "ime":"kerim",
     "prezime":"bektasevic",
     "telefon":"061459753",
+    "jmbg":"15299991707",
+    "datum_zaposljavanja":"2020-09-21"
+}
+
+
+###
+delete  https://nrs-backend.herokuapp.com/people/71
+content-Type: application/json
+
+{
+    "lokacija":"kuca",
+    "ime":"kerim",
+    "prezime":"bektasevic",
+    "telefon":"061459753",
     "jmbg":15299991707,
     "datum_zaposljavanja":"2020-09-21"
 }
