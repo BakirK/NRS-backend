@@ -124,8 +124,8 @@ router.post("/people", async (req, res) => {
       ],
       function (error, resultsOuter, fields) {
         if (error) {
-          console.log(error);
-          res.writeHead(200);
+          console.log("error se desio" + error);
+          res.writeHead(500);
           res.write(JSON.stringify({ error: "JMBG is taken" }));
           console.log("JMBG is taken");
           res.send();
