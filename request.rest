@@ -1,5 +1,5 @@
 ###
-get  https://nrs-backend.herokuapp.com/people
+get  localhost:8080/people
 content-Type: application/json
 
 {
@@ -7,7 +7,7 @@ content-Type: application/json
 }
 
 ###
-post  https://nrs-backend.herokuapp.com/people
+post  localhost:8080/people
 content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ content-Type: application/json
 
 
 ###
-delete  https://nrs-backend.herokuapp.com/people/71
+delete  https://nrs-backend.herokuapp.com/people/131
 content-Type: application/json
 
 {

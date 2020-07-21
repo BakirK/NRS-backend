@@ -124,7 +124,6 @@ router.post("/people", async (req, res) => {
       ],
       function (error, resultsOuter, fields) {
         if (error) {
-          console.log("error se desio" + error);
           res.writeHead(500);
           res.write(JSON.stringify({ error: "JMBG is taken" }));
           console.log("JMBG is taken");
@@ -132,22 +131,16 @@ router.post("/people", async (req, res) => {
           //req.flash("error", "JMBG vec postoji");
           //res.render("addUser.ejs");
         } else {
-          console.log(JSON.stringify(resultsOuter));
-          queries.getPersonById(
-            connection,
-            resultsOuter.insertId,
-            (temp, data) => {
-              console.log("tralalala");
-              if (data == null) {
-                res.writeHead("404");
-                res.write(JSON.stringify({ error: "Not found" }));
-              } else {
-                res.writeHead("200");
-                res.write(JSON.stringify(data));
-              }
-              res.send();
+          queries.getPersonById(resultsOuter.insertId, (temp, data) => {
+            if (data == null) {
+              res.writeHead("404");
+              res.write(JSON.stringify({ error: "Not found" }));
+            } else {
+              res.writeHead("200");
+              res.write(JSON.stringify(data));
             }
-          );
+            res.send();
+          });
         }
       }
     );
