@@ -5,6 +5,7 @@ const flash = require("express-flash");
 const queries = require("../queries/peopleQueries.js");
 const { ROLE } = require("../roles.js");
 var htmlEncode = require("js-htmlencode").htmlEncode;
+const connection = require("../database.js");
 
 router.get("/people", (req, res) => {
   queries.getPeople((data) => res.json(data));
@@ -151,6 +152,7 @@ router.post("/people", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.json(error);
+    res.send;
   }
 });
 

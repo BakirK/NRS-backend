@@ -7,16 +7,37 @@ content-Type: application/json
 }
 
 ###
-get  https://nrs-backend.herokuapp.com/people
+post  https://nrs-backend.herokuapp.com/people
 content-Type: application/json
 
 {
-    
+    "lokacija":"kuca",
+    "ime":"kerim",
+    "prezime":"bektasevic",
+    "telefon":"061459753",
+    "jmbg":"1529999170007",
+    "datum_zaposljavanja":"2020-09-21"
 }
 
 
 ###
-delete  https://nrs-backend.herokuapp.com/warehouses/1/items/1
+post  https://nrs-backend.herokuapp.com/warehouses/1/items/71
+content-Type: application/json
+
+{
+    "quantity":33
+}
+
+###
+get  https://nrs-backend.herokuapp.com/warehouses/1/items
+content-Type: application/json
+
+{
+}
+
+
+###
+delete  https://nrs-backend.herokuapp.com/warehouses/1/items/71
 content-Type: application/json
 
 {
