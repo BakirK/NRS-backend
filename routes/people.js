@@ -123,7 +123,6 @@ router.post("/people", async (req, res) => {
         person.lokacija,
       ],
       function (error, resultsOuter, fields) {
-        console.log(JSON.stringify(resultsOuter));
         if (error) {
           console.log(error);
           res.writeHead(200);
@@ -133,10 +132,12 @@ router.post("/people", async (req, res) => {
           //req.flash("error", "JMBG vec postoji");
           //res.render("addUser.ejs");
         } else {
+          console.log(JSON.stringify(resultsOuter));
           queries.getPersonById(
             connection,
             resultsOuter.insertId,
             (temp, data) => {
+              console.log("tralalala");
               if (data == null) {
                 res.writeHead("404");
                 res.write(JSON.stringify({ error: "Not found" }));
