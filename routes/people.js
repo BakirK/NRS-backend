@@ -106,8 +106,8 @@ router.post("/people", async (req, res) => {
       ime: htmlEncode(req.body.ime),
       prezime: htmlEncode(req.body.prezime),
       telefon: htmlEncode(req.body.telefon),
-      datum_zaposljavanja: htmlEncode(req.body.datum_zaposljavanja),
-      jmbg: htmlEncode(req.body.jmbg),
+      datum_zaposljavanja: req.body.datum_zaposljavanja,
+      jmbg: req.body.jmbg(),
     };
     let query =
       "INSERT INTO osobe(Ime, Prezime, Telefon, datum_zaposljavanja, JMBG, naziv_lokacije)" +
