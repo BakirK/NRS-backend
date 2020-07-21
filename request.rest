@@ -1,13 +1,31 @@
 ###
-GET  https://nrs-backend.herokuapp.com/items
+post  https://nrs-backend.herokuapp.com/users
+content-Type: application/json
+
+{
+    "quantity":69
+}
+
+###
+get  https://nrs-backend.herokuapp.com/people
+content-Type: application/json
+
+{
+    
+}
+
+
+###
+delete  https://nrs-backend.herokuapp.com/warehouses/1/items/1
 content-Type: application/json
 
 {
 }
 
+
 ###
 
-DELETE https://nrs-backend.herokuapp.com/orders
+DELETE https://nrs-backend.herokuapp.com/warehouses/1/items/1
 content-Type: application/json
 
 {

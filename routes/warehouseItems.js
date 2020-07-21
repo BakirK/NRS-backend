@@ -41,6 +41,8 @@ router.post(
         res.writeHead(500);
         if (error === 1) {
           res.write(JSON.stringify({ error: "Item or warehouse not found" }));
+        } else if (quantity == null) {
+          res.write(JSON.stringify({ error: "Quantity not specified!" }));
         } else {
           res.write(
             JSON.stringify({ error: "Warehouse already has that item" })

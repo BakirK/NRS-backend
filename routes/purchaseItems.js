@@ -22,7 +22,7 @@ router.post(
   (req, res) => {
     let purchaseId = req.params.id;
     let itemId = req.params.itemId;
-    let quantity = req.body.quantity;
+    let quantity = parseInt(req.body.quantity);
     if (!quantity || !itemId || !purchaseId) {
       res.json({ error: "Invalid params." });
       return;
@@ -95,9 +95,9 @@ router.put(
   "/purchases/:id/items/:itemId",
   authChecks.checkPurchase,
   (req, res) => {
-    let purchaseId = req.params.id;
-    let itemId = req.params.itemId;
-    let quantity = req.body.quantity;
+    let purchaseId = parseInt(req.params.id);
+    let itemId = parseInt(req.params.itemId);
+    let quantity = parseInt(req.body.quantity);
     if (!quantity || !itemId || !purchaseId) {
       res.json({ error: "Invalid params." });
       return;
