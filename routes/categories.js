@@ -35,7 +35,7 @@ router.get("/categories/:id", authChecks.authRole(ROLE.KUPAC), (req, res) => {
 
 router.delete(
   "/categories/:id",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   (req, res) => {
     queries.deleteCategoryById(req.params.id, (error, results, fields) => {
       if (error) {
@@ -54,7 +54,7 @@ router.delete(
 
 router.put(
   "/categories/:id",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   async (req, res) => {
     let category = {};
     category.id = req.params.id;
@@ -85,7 +85,7 @@ router.put(
 
 router.post(
   "/categories",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   async (req, res) => {
     try {
       let category = {};

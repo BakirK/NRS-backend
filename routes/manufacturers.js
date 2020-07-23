@@ -22,7 +22,7 @@ router.get(
 
 router.get(
   "/manufacturers/:id",
-  authChecks.authRole(ROLE.KUPAC),
+  //authChecks.authRole(ROLE.KUPAC),
   (req, res) => {
     queries.getManufacturerById(req.params.id, (data) => {
       if (data == null) {
@@ -39,7 +39,7 @@ router.get(
 
 router.delete(
   "/manufacturers/:id",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   (req, res) => {
     queries.deleteManufacturerById(req.params.id, (error, results, fields) => {
       if (error) {
@@ -56,7 +56,7 @@ router.delete(
 
 router.put(
   "/manufacturers/:id",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   async (req, res) => {
     let manufacturer = {};
     manufacturer.id = req.params.id;
@@ -79,7 +79,7 @@ router.put(
 
 router.post(
   "/manufacturers",
-  authChecks.authRole(ROLE.ADMIN),
+  //authChecks.authRole(ROLE.ADMIN),
   async (req, res) => {
     try {
       let manufacturer = {};
