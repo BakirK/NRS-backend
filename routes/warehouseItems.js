@@ -56,6 +56,37 @@ router.post(
   }
 );
 
+router.put(
+  "/warehouses/:id/items/:itemId",
+  //authChecks.authRole(ROLE.ADMIN),
+  (req, res) => {
+    let warehouseId = req.params.id;
+    let itemId = req.params.itemId;
+    let quantity = parseInt(req.body.quantity);
+    queries.updateWarehouseItemsById(warehouseId, itemId, quantity, function (
+      error,
+      results,
+      fields
+    ) {
+      if (error) {
+        res.writeHead(500);
+        if (error === 1) {
+          res.write(JSON.stringify({ error: "Item or warehouse not found" }));
+        } else if (quantity == null) {
+          res.write(JSON.stringify({ error: "Quantity not specified!" }));
+        } else {
+          res.write(
+            JSON.stringify({ error: "Warehouse already has that item" })
+          );
+        }
+        res.send();
+      } else {
+        res.json({ success: "Item updated." });
+      }
+    });
+  }
+);
+
 router.delete(
   "/warehouses/:id/items/:itemId",
   //authChecks.checkAuthenticated,

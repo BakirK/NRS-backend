@@ -77,10 +77,36 @@ var queries = (function () {
     });
   }
 
+  function updateWarehouseItemByIdImpl(
+    warehouseId,
+    itemId,
+    quantity,
+    callback
+  ) {
+    warehousesQ.getWarehouseById(warehouseId, (data) => {
+      if (data == null) {
+        callback(1);
+      } else {
+        itemQ.getItemById(itemId, (innerData) => {
+          if (innerData == null) {
+            callback(1);
+          } else {
+            connection.query(
+              "UPDATE proizvodi_skladista SET kolicina=? WHERE skladiste_id=? and proizvod_id=?",
+              [quantity, warehouseId, itemId],
+              callback
+            );
+          }
+        });
+      }
+    });
+  }
+
   return {
     getWarehouseItemsById: getWarehouseItemsByIdImpl,
     addWarehouseItemsById: addWarehouseItemsByIdImpl,
     deleteWarehouseItemsById: deleteWarehouseItemsByIdImpl,
+    updateWarehouseItemById: updateWarehouseItemByIdImpl,
   };
 })();
 
