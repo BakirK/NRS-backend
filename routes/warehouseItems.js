@@ -63,7 +63,7 @@ router.put(
     let warehouseId = req.params.id;
     let itemId = req.params.itemId;
     let quantity = parseInt(req.body.quantity);
-    queries.updateWarehouseItemsById(warehouseId, itemId, quantity, function (
+    queries.updateWarehouseItemById(warehouseId, itemId, quantity, function (
       error,
       results,
       fields
