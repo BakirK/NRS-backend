@@ -1,27 +1,34 @@
 ###
-get  localhost:8080/people
+get  https://nrs-backend.herokuapp.com/categories
 content-Type: application/json
 
 {
-    "quantity":69
-}
 
-###
-post  localhost:8080/people
-content-Type: application/json
-
-{
-    "lokacija":"kuca",
-    "ime":"kerim",
-    "prezime":"bektasevic",
-    "telefon":"061459753",
-    "jmbg":"15299991707",
-    "datum_zaposljavanja":"2020-09-21"
 }
 
 
 ###
-delete  https://nrs-backend.herokuapp.com/people/131
+put  https://nrs-backend.herokuapp.com/categories/461
+content-Type: application/json
+
+{
+    "naziv":"Toaletska vodica",
+    "nadkategorija":1
+
+}
+
+###
+post  https://nrs-backend.herokuapp.com/categories
+content-Type: application/json
+
+{
+    "naziv":"Parfemi",
+    "nadkategorija":null
+
+}
+
+###
+post  https://nrs-backend.herokuapp.com/people
 content-Type: application/json
 
 {
@@ -31,6 +38,14 @@ content-Type: application/json
     "telefon":"061459753",
     "jmbg":15299991707,
     "datum_zaposljavanja":"2020-09-21"
+}
+
+
+###
+delete  https://nrs-backend.herokuapp.com/people/181
+content-Type: application/json
+
+{
 }
 
 

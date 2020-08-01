@@ -63,7 +63,7 @@ router.put(
     }
     if (req.body.nadkategorija !== undefined) {
       req.body.nadkategorija !== null
-        ? (category.nadkategorija = htmlEncode(req.body.nadkategorija))
+        ? (category.nadkategorija = parseInt(req.body.nadkategorija))
         : (category.nadkategorija = req.body.nadkategorija);
     }
 
@@ -93,7 +93,7 @@ router.post(
         category.naziv = htmlEncode(req.body.naziv);
       }
       if (req.body.nadkategorija) {
-        category.nadkategorija = htmlEncode(req.body.nadkategorija);
+        category.nadkategorija = parseInt(req.body.nadkategorija);
       }
       queries.addCategory(category, function (error, results, fields) {
         if (error) {
