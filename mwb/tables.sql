@@ -392,15 +392,15 @@ INSERT INTO skladista VALUES(1,"skladiste1","lokacija1");
 INSERT INTO skladista VALUES(2,"skladiste2","lokacija2");
 INSERT INTO skladista VALUES(3,"skladiste3","lokacija3");
 
-INSERT INTO osobe VALUES(2,"ime2","prezime2","(+387)61/145-426","2020-06-30",201238123123,"Sarajevo,Mihrivode");
-INSERT INTO osobe VALUES(3,"ime3","prezime3","(+387)62/155-426","2020-04-30",201638423123,"Sarajevo,Kovaci");
-INSERT INTO osobe VALUES(4,"ime4","prezime4","(+387)62/165-422","2020-02-21",2012381234123,"Sarajevo,Bistrik");
+INSERT INTO osobe VALUES(2,"ime2","prezime2","(+387)61/145-426","2020-06-30",2012381234123,"Sarajevo,Mihrivode");
+INSERT INTO osobe VALUES(3,"ime3","prezime3","(+387)62/155-426","2020-04-30",2016328423123,"Sarajevo,Kovaci");
+INSERT INTO osobe VALUES(4,"ime4","prezime4","(+387)62/165-422","2020-02-21",2012383123413,"Sarajevo,Bistrik");
 INSERT INTO osobe VALUES(5,"ime5","prezime5","(+387)61/166-412","2020-06-21",1012381234123,"Sarajevo,Pofalici");
-INSERT INTO osobe VALUES(6,"Ime6","Prezime6","(+387)62/146-126","2019-07-03",123456789,"Sarajevo");
-INSERT INTO osobe VALUES(7,"Ime7","Prezime7","(+387)63/146-126","2019-03-03",12345789,"Sarajevo");
-INSERT INTO osobe VALUES(8,"Ime8","Prezime8","(+387)61/156-121","2019-04-03",12346789,"Sarajevo");
-INSERT INTO osobe VALUES(9,"Ime9","Prezime9","(+387)61/146-116","2019-05-03",12345679,"Sarajevo");
-INSERT INTO osobe VALUES(10,"Ime10","Prezime10","(+387)62/116-126","2019-06-03",12456789,"Sarajevo");
+INSERT INTO osobe VALUES(6,"Ime6","Prezime6","(+387)62/146-126","2019-07-03",1234567891611,"Sarajevo");
+INSERT INTO osobe VALUES(7,"Ime7","Prezime7","(+387)63/146-126","2019-03-03",1234578923475,"Sarajevo");
+INSERT INTO osobe VALUES(8,"Ime8","Prezime8","(+387)61/156-121","2019-04-03",1234678134519,"Sarajevo");
+INSERT INTO osobe VALUES(9,"Ime9","Prezime9","(+387)61/146-116","2019-05-03",1234561784379,"Sarajevo");
+INSERT INTO osobe VALUES(10,"Ime10","Prezime10","(+387)62/116-126","2019-06-03",124567891983,"Sarajevo");
 
 
 INSERT INTO proizvodi_skladista VALUES(4,1,20);
@@ -423,15 +423,15 @@ INSERT INTO proizvodi_dobavljaca VALUES(3,4);
 INSERT INTO proizvodi_dobavljaca VALUES(4,4);
 INSERT INTO proizvodi_dobavljaca VALUES(2,3);
 
-INSERT INTO korisnicki_racuni VALUES(2,2,2,"asd","mail@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(3,3,1,"abc","mail2@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(4,4,3,"qwer","mail3@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(5,5,2,"wwww","mail4@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(6,6,3,"asd123","mail6@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(7,7,1,"abc","mail7@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(8,8,2,"qwerr","mail8@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(9,9,2,"wwwww","mail9@hotmail.com");
-INSERT INTO korisnicki_racuni VALUES(10,10,2,"wwwww","mail10@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(2,2,2,"asdEf25","mail@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(3,3,1,"abcD24","mail2@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(4,4,3,"Qwer123","mail3@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(5,5,2,"wwwwW4","mail4@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(6,6,3,"Asd123","mail6@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(7,7,1,"abcC123","mail7@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(8,8,2,"qwerrR45","mail8@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(9,9,2,"wwwwwAB23","mail9@hotmail.com");
+INSERT INTO korisnicki_racuni VALUES(10,10,2,"wwwwwA4","mail10@hotmail.com");
 
 
 INSERT INTO kupovine VALUES(1,3,6);
@@ -457,3 +457,11 @@ INSERT INTO narudzbe VALUES(5,5,2,"2020-03-14","2020-04-11");
 INSERT INTO narudzbe VALUES(6,6,3,"2020-03-26","2020-04-12");
 
 INSERT INTO artikli_narudzbe VALUES(3,2,1,5);
+
+INSERT into proizvodi_dobavljaca VALUES(1,1);
+INSERT into proizvodi_dobavljaca VALUES(5,2);
+INSERT into proizvodi_dobavljaca VALUES(6,3);
+INSERT into proizvodi_dobavljaca VALUES(7,1);
+INSERT into proizvodi_dobavljaca VALUES(8,2);
+INSERT into proizvodi_dobavljaca VALUES(9,1);
+INSERT into proizvodi_dobavljaca VALUES(10,3);
